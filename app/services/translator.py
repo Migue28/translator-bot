@@ -1,20 +1,11 @@
-from urllib import request, response
-from google.cloud import translate
+from google.cloud import translate_v2
+import os
 
-def translate_text(text='', project_id=''):
-    client = translate.TranslationServiceClient()
-    location = 'global'
-    parent = f"project/{project_id}/locations/{location}"
+os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = r"google_api_key.json"
 
-    response = client.translate_text(
-        request = {
-            "parent": parent,
-            "contents": [text],
-            "mime_type": "text/plain",
-            "source_languaje_code":"en-US",
-            "target_language_code": "es",
-        }
-    )
-
-    for translation in response.translations:
-        print("Translated text: {}".format(translation.translated_text))
+def translate_text(text, target_language):
+    tranlate_client = translate_v2.Client()
+    translation = tranlate_client.translate(text, target_language)
+    return translation["translatedText"]
+    
+print(translate_text("testing testing", "es"))
