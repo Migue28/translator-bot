@@ -8,4 +8,4 @@ def translate_text(text, target_language):
     translation = tranlate_client.translate(text, target_language)
     return translation["translatedText"]
     
-print(translate_text("testing testing", "es"))
+#print(translate_text("testing testing", "es"))

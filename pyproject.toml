@@ -7,6 +7,8 @@ authors = ["Eddy <miguepoke28@gmail.com>"]
 [tool.poetry.dependencies]
 python = "^3.8"
 google-cloud-translate = "^3.8.0"
+discord = "^1.7.3"
+python-dotenv = "^0.20.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
