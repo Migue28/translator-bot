@@ -4,6 +4,8 @@
 
 This is a discord bot who translate any language to spanish. 
 
+<br/>![Bot working](assets/discord-bot-working.gif)
+
 ## Technologies used
 
 - [Cloud Translation](https://cloud.google.com/)
